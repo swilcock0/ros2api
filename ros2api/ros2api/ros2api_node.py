@@ -77,7 +77,7 @@ class Ros2apiNode(Node):
   def get_topics(self,request,response):
     """ Called by the rosapi/Topics service. Returns a list of all the topics being published. """
     topics, types = zip( *self.get_topic_names_and_types(no_demangle = False) )
-    response.topics
+    response.topics = topics
     return response
 
   def get_topics_for_type(self,request,response):
